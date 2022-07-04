@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "YFF0ttVJ5mrXW97Y+wuO6gJ/A92Tr42tx7tIZTjb2iTCR6YQlw/9HehHWNq10mGdM+YIAE2wSf87JONgh90pRQ==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\jesch\\OneDrive\\Documents\\My Games\\Terraria\\tModLoader\\ModSources\\YagoisCalmityAdditions\\YagoisCalmityAdditions.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\jesch\\.nuget\\packages\\tmodloader.codeassist\\0.1.5\\tmodloader.codeassist.0.1.5.nupkg.sha512"
+  ],
+  "logs": []
+}

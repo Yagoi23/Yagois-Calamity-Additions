@@ -1,0 +1,4 @@
+displayName = Yagoi's Calamity Additions
+author = Yagoi
+version = 0.1
+modReferences = CalamityMod
