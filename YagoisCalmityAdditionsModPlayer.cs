@@ -43,6 +43,14 @@ namespace YagoisCalamityAdditions
                     itemDrop = ModContent.ItemType<NuclearHerringStaff>();
                 }   
             }
+            if (Player.GetModPlayer<CalamityPlayer>().ZoneSulphur || Player.GetModPlayer<CalamityPlayer>().ZoneAbyss)
+            {
+                if (baitItemType == ModContent.ItemType<RedJellyFishBait>() || ModContent.ItemType<PurpleJellyFishBait>() ) 
+                {
+                    int randomnumber = Main.rand.Next(100);
+                    itemDrop = ModContent.ItemType<AbyssJelly>();
+                }   
+            }
         }
     }
 }
