@@ -37,20 +37,26 @@ namespace YagoisCalamityAdditions
             }*/
             if (Player.GetModPlayer<CalamityPlayer>().ZoneSulphur || Player.GetModPlayer<CalamityPlayer>().ZoneAbyss)
             {
-                if (baitItemType == ModContent.ItemType<AbyssJelly>()) 
+                if (baitItemType == ModContent.ItemType<AbyssJellyfish>()) 
                 {
                     int randomnumber = Main.rand.Next(100);
                     itemDrop = ModContent.ItemType<NuclearHerringStaff>();
                 }   
             }
-            if (Player.GetModPlayer<CalamityPlayer>().ZoneSulphur || Player.GetModPlayer<CalamityPlayer>().ZoneAbyss)
+            if (baitItemType == ModContent.ItemType<RedJellyFishBait>() || baitItemType == ModContent.ItemType<PurpleJellyFishBait>())
             {
-                if (baitItemType == ModContent.ItemType<RedJellyFishBait>() || ModContent.ItemType<PurpleJellyFishBait>() ) 
+                if (Player.GetModPlayer<CalamityPlayer>().ZoneSulphur || Player.GetModPlayer<CalamityPlayer>().ZoneAbyss)
                 {
                     int randomnumber = Main.rand.Next(100);
-                    itemDrop = ModContent.ItemType<AbyssJelly>();
-                }   
-            }
+                    itemDrop = ModContent.ItemType<AbyssJellyfish>();
+                }
+                if (Player.GetModPlayer<CalamityPlayer>().ZoneAstral) 
+                {
+                    int randomnumber = Main.rand.Next(2);
+                    itemDrop = ModContent.ItemType<AbyssJellyfish>();
+                }
+                
+            }  
         }
     }
 }
