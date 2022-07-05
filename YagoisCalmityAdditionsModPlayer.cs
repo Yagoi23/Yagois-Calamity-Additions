@@ -20,9 +20,11 @@ namespace YagoisCalamityAdditions
     public class YagoisCalmityAdditionsPlayer : ModPlayer
     {
         public bool NuclearHerring;
+        public bool AbyssHerring;
         public override void ResetEffects()
         {
             NuclearHerring = false;
+            AbyssHerring = false;
         }
 
         public override void CatchFish(FishingAttempt attempt, ref int itemDrop, ref int npcSpawn, ref AdvancedPopupRequest sonar, ref Vector2 sonarPosition)
@@ -42,16 +44,24 @@ namespace YagoisCalamityAdditions
                 {
                     int randomnumber = Main.rand.Next(100);
                     itemDrop = ModContent.ItemType<NuclearHerringStaff>();
-                }   
+                }
+                if (baitItemType == ModContent.ItemType<AbyssJellyfish>())
+                {
+                    int randomnumber = Main.rand.Next(100);
+                    itemDrop = ModContent.ItemType<AbyssHerringStaff>();
+                }
             }
             if (baitItemType == ModContent.ItemType<RedJellyfishBait>() || baitItemType == ModContent.ItemType<PurpleJellyfishBait>())
             {
                 if (Player.GetModPlayer<CalamityPlayer>().ZoneSulphur || Player.GetModPlayer<CalamityPlayer>().ZoneAbyss)
                 {
-                    int randomnumber = Main.rand.Next(3);
-                    if (randomnumber == 0) { itemDrop = ModContent.ItemType<AbyssJellyfish>(); }
-                    if (randomnumber == 1) { itemDrop = ModContent.ItemType<SulphuricJellyfish>(); }
-                    if (randomnumber == 2) { itemDrop = ModContent.ItemType<SulphuricJellyfish>(); }
+                    if (NPC.downedPlantBoss)
+                    {
+                        int randomnumber = Main.rand.Next(3);
+                        if (randomnumber == 0) { itemDrop = ModContent.ItemType<AbyssJellyfish>(); }
+                        if (randomnumber == 1) { itemDrop = ModContent.ItemType<SulphuricJellyfish>(); }
+                        if (randomnumber == 2) { itemDrop = ModContent.ItemType<SulphuricJellyfish>(); }
+                    }
                     if (AcidRainEvent.AcidRainEventIsOngoing == true)
                     {
                         itemDrop = ModContent.ItemType<NuclearJellyfish>();
