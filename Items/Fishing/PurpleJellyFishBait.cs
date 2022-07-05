@@ -4,7 +4,7 @@ using Terraria.ID;
 
 namespace YagoisCalmityAdditions.Items.Fishing
 {
-    public class PurpleJellyFishBait : ModItem
+    public class PurpleJellyfishBait : ModItem
     {
         public override void SetStaticDefaults()
         {

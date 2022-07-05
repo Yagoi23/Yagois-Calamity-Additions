@@ -11,7 +11,7 @@ namespace YagoisCalmityAdditions.Items.Weapons.Summoner
 	{
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Herring Staff");
+			DisplayName.SetDefault("Nuclear Herring Staff");
 			Tooltip.SetDefault("Summons an irradiated herring to fight for you\nEach herring takes only half of a minion slot");
 			//Main.set_SacrificeTotal(1);
 		}

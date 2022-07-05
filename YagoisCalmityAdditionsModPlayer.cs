@@ -13,6 +13,7 @@ using CalamityMod.NPCs.Abyss;
 using YagoisCalmityAdditions.Items.Weapons.Summoner;
 using CalamityMod.CalPlayer;
 using YagoisCalmityAdditions.Items.Fishing;
+using CalamityMod.Events;
 
 namespace YagoisCalamityAdditions
 {
@@ -35,25 +36,33 @@ namespace YagoisCalamityAdditions
                 if(val1 == 1){ npcspawntype = ModContent.NPCType<ColossalSquid>(); }
                 YagoisCalamityAdditionsGlobalNPC.PlagueBaitSpawn(Player.whoAmI, npcspawntype, baitItemType);
             }*/
-            if (Player.GetModPlayer<CalamityPlayer>().ZoneSulphur || Player.GetModPlayer<CalamityPlayer>().ZoneAbyss)
+            if (Player.GetModPlayer<CalamityPlayer>().ZoneSulphur || Player.GetModPlayer<CalamityPlayer>().ZoneAbyss || Player.ZoneBeach)
             {
-                if (baitItemType == ModContent.ItemType<AbyssJellyfish>()) 
+                if (baitItemType == ModContent.ItemType<NuclearJellyfish>()) 
                 {
                     int randomnumber = Main.rand.Next(100);
                     itemDrop = ModContent.ItemType<NuclearHerringStaff>();
                 }   
             }
-            if (baitItemType == ModContent.ItemType<RedJellyFishBait>() || baitItemType == ModContent.ItemType<PurpleJellyFishBait>())
+            if (baitItemType == ModContent.ItemType<RedJellyfishBait>() || baitItemType == ModContent.ItemType<PurpleJellyfishBait>())
             {
                 if (Player.GetModPlayer<CalamityPlayer>().ZoneSulphur || Player.GetModPlayer<CalamityPlayer>().ZoneAbyss)
                 {
-                    int randomnumber = Main.rand.Next(100);
-                    itemDrop = ModContent.ItemType<AbyssJellyfish>();
-                }
+                    int randomnumber = Main.rand.Next(3);
+                    if (randomnumber == 0) { itemDrop = ModContent.ItemType<AbyssJellyfish>(); }
+                    if (randomnumber == 1) { itemDrop = ModContent.ItemType<SulphuricJellyfish>(); }
+                    if (randomnumber == 2) { itemDrop = ModContent.ItemType<SulphuricJellyfish>(); }
+                    if (AcidRainEvent.AcidRainEventIsOngoing == true)
+                    {
+                        itemDrop = ModContent.ItemType<NuclearJellyfish>();
+                    }
+                } 
                 if (Player.GetModPlayer<CalamityPlayer>().ZoneAstral) 
                 {
                     int randomnumber = Main.rand.Next(2);
-                    itemDrop = ModContent.ItemType<AbyssJellyfish>();
+                    if (randomnumber == 0) { itemDrop = ModContent.ItemType<OrangeAstralJellyfish>(); }
+                    if (randomnumber == 1) { itemDrop = ModContent.ItemType<GreenAstralJellyfish>(); }
+
                 }
                 
             }  
