@@ -23,12 +23,26 @@ namespace YagoisCalamityAdditions
         public bool AbyssHerring;
         public bool PlagueHerring;
         public bool SulphuricHerring;
+        public bool AstralHerring;
+        public bool LavaHerring;
+        public bool IceHerring;
+        public bool DivineHerring;
+        public bool DemonicHerring;
+        public bool ShadowHerring;
+        public bool InterstellarHerring;
         public override void ResetEffects()
         {
             NuclearHerring = false;
             AbyssHerring = false;
             PlagueHerring = false;
             SulphuricHerring = false;
+            AstralHerring = false;
+            LavaHerring = false;
+            IceHerring = false;
+            DivineHerring = false;
+            DemonicHerring = false;
+            ShadowHerring = false;
+            InterstellarHerring = false;
         }
 
         public override void CatchFish(FishingAttempt attempt, ref int itemDrop, ref int npcSpawn, ref AdvancedPopupRequest sonar, ref Vector2 sonarPosition)

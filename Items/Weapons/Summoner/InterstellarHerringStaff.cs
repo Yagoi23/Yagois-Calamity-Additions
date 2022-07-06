@@ -3,17 +3,25 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Microsoft.Xna.Framework;
+using Terraria;
+using Terraria.DataStructures;
+using Terraria.ID;
+using Terraria.GameContent.Creative;
 using Terraria.ModLoader;
 
 namespace YagoisCalmityAdditions.Items.Weapons.Summoner
 {
-	public class SulphuricHerringStaff : ModItem
+	public class InterstellarHerringStaff : ModItem
 	{
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Sulphuric Herring Staff");
-			Tooltip.SetDefault("Summons an sulphuric herring to fight for you\nEach herring takes only half of a minion slot");
+			DisplayName.SetDefault("Interstellar Herring Staff");
+			Tooltip.SetDefault("Summons an interstellar herring to fight for you\nEach herring takes only half of a minion slot");
 			//Main.set_SacrificeTotal(1);
+			Main.RegisterItemAnimation(Item.type, new DrawAnimationVertical(5, 8));
+			ItemID.Sets.AnimatesAsSoul[Item.type] = true; // Makes the item have an animation while in world (not held.). Use in combination with RegisterItemAnimation
+			//ItemID.Sets.ItemIconPulse[Item.type] = true; // The item pulses while in the player's inventory
 		}
 
 		public override void SetDefaults()
@@ -30,7 +38,7 @@ namespace YagoisCalmityAdditions.Items.Weapons.Summoner
 			Item.rare = 3;
 			//Item.UseSound = SoundID.Item21;
 			Item.autoReuse = true;
-			Item.shoot = ModContent.ProjectileType<SulphuricHerringMinion>();
+			Item.shoot = ModContent.ProjectileType<InterstellarHerringMinion>();
 			Item.shootSpeed = 10f;
 			Item.DamageType = DamageClass.Summon;
 		}

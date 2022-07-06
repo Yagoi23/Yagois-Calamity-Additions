@@ -7,12 +7,12 @@ using Terraria.ModLoader;
 
 namespace YagoisCalmityAdditions.Items.Weapons.Summoner
 {
-	public class SulphuricHerringStaff : ModItem
+	public class AstralHerringStaff : ModItem
 	{
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Sulphuric Herring Staff");
-			Tooltip.SetDefault("Summons an sulphuric herring to fight for you\nEach herring takes only half of a minion slot");
+			DisplayName.SetDefault("Astral Herring Staff");
+			Tooltip.SetDefault("Summons an astral herring to fight for you\nEach herring takes only half of a minion slot");
 			//Main.set_SacrificeTotal(1);
 		}
 
@@ -30,7 +30,7 @@ namespace YagoisCalmityAdditions.Items.Weapons.Summoner
 			Item.rare = 3;
 			//Item.UseSound = SoundID.Item21;
 			Item.autoReuse = true;
-			Item.shoot = ModContent.ProjectileType<SulphuricHerringMinion>();
+			Item.shoot = ModContent.ProjectileType<AstralHerringMinion>();
 			Item.shootSpeed = 10f;
 			Item.DamageType = DamageClass.Summon;
 		}
